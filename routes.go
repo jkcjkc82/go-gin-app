@@ -52,4 +52,10 @@ func initializeRoutes() {
 		// Ensure that the user is logged in by using the middleware
 		articleRoutes.POST("/create", ensureLoggedIn(), createArticle)
 	}
+
+	testpageRoutes := router.Group("/testpage")
+	{
+		// Handle GET requests at /testpage
+		testpageRoutes.GET("/", showTestpage)
+	}
 }
